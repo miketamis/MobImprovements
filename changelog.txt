@@ -1,0 +1,7 @@
+R2
+*added initial threat (when mob sees you) bassed of your current armor
+
+R1
+* added threat system
+* added saving of threat
+
