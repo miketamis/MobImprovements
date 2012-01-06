@@ -183,6 +183,8 @@ public abstract class EntityMob extends EntityCreature
    }
         entityToAttack = topthreat.getKey();
     }
+    
+  //mike end
     protected boolean attackEntityAsMob(Entity entity)
     {
         int i = attackStrength;
@@ -196,7 +198,7 @@ public abstract class EntityMob extends EntityCreature
         }
         return entity.attackEntityFrom(DamageSource.causeMobDamage(this), i);
     }
-//mike end
+
     protected void attackEntity(Entity entity, float f)
     {
         if(attackTime <= 0 && f < 2.0F && entity.boundingBox.maxY > boundingBox.minY && entity.boundingBox.minY < boundingBox.maxY)
@@ -210,12 +212,13 @@ public abstract class EntityMob extends EntityCreature
     {
         return 0.5F - worldObj.getLightBrightness(i, j, k);
     }
-    NBTTagCompound nbttagcompound1;
+  
 	
     public void writeEntityToNBT(NBTTagCompound nbttagcompound)
     {
         super.writeEntityToNBT(nbttagcompound);
         //mike add
+        NBTTagCompound nbttagcompound1;
         NBTTagList nbttaglist = new NBTTagList();
         for(Map.Entry<Entity, Integer> entry : Threat.entrySet())
         {
